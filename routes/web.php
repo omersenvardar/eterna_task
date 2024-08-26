@@ -14,7 +14,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('posts', PostController::class);
 Route::get('/my-posts', [PostController::class, 'myPosts'])->name('posts.my');
 
-Route::prefix('categories')->name('categories.')->group(function () {
+Route::middleware('auth')->prefix('categories')->name('categories.')->group(function () {
     Route::get('/', [CategoryController::class, 'index'])->name('index');
     Route::get('/create', [CategoryController::class, 'create'])->name('create');
     Route::post('/', [CategoryController::class, 'store'])->name('store');
