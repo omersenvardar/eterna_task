@@ -1,0 +1,96 @@
+// Import Variables
+@import 'variables';
+
+// Import Fonts (Consider Local Hosting)
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Import Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// TailwindCSS Directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// General Styles
+body {
+    font-family: $font-family-sans-serif;
+    background-color: $body-bg;
+    line-height: $line-height-base;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: $text-yellow-500;
+    }
+}
+
+.bg-gray-50 { background-color: #f9fafb; }
+.bg-gray-800 { background-color: #2d3748; }
+.bg-gray-900 { background-color: #1a202c; }
+.bg-white { background-color: $body-bg; }
+.bg-yellow-500 { background-color: $text-yellow-500; }
+.bg-yellow-400 { background-color: #fbd38d; }
+
+.text-gray-600 { color: #4a5568; }
+.text-gray-800 { color: #2d3748; }
+.text-gray-900 { color: #1a202c; }
+.text-blue-600 { color: #3182ce; }
+.text-yellow-500 { color: $text-yellow-500; }
+.text-yellow-400 { color: #fbd38d; }
+
+.shadow-lg {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: $font-size-base;
+
+    &.alert-danger {
+        background-color: $alert-danger-bg;
+        border-color: $alert-danger-border;
+        color: $alert-danger-text;
+    }
+
+    &.alert-success {
+        background-color: $alert-success-bg;
+        border-color: $alert-success-border;
+        color: $alert-success-text;
+    }
+}
+
+.post-card {
+    width: 15vw; /* Card width */
+    min-width: 200px;
+    max-width: 300px;
+    @apply bg-white p-6 rounded-lg shadow-lg border border-gray-200;
+
+    .edit-button {
+        color: $text-blue-600;
+        &:hover {
+            color: darken($text-blue-600, 10%);
+        }
+    }
+
+    .delete-button {
+        color: $text-red-600;
+        &:hover {
+            color: darken($text-red-600, 10%);
+        }
+    }
+}
